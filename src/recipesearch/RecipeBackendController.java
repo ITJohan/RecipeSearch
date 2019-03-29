@@ -36,7 +36,7 @@ public class RecipeBackendController {
 
     public void setMaxPrice(int maxPrice) {
         if(maxPrice>0){
-            this.maxPrice=maxPrice;
+            this.maxPrice = maxPrice;
         }
     }
 
