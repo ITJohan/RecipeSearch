@@ -41,7 +41,6 @@ public class RecipeListItem extends AnchorPane {
     }
 
     public void onClick(MouseEvent mouseEvent) {
-        System.out.println("I'm pressing pane, and the click is registering");
         parentController.openRecipeView(recipe);
     }
 }

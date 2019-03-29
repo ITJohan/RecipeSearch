@@ -1,21 +1,18 @@
 
 package recipesearch;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.ait.dat215.lab2.Recipe;
@@ -56,10 +53,14 @@ public class RecipeSearchController implements Initializable {
         populateMap();
     }
 
+    /**
+     * Behöver fixa 11.3
+     */
     private void updateRecipeList(){
         recipeListFlowPane.getChildren().clear();
         backendCC.getRecipes().forEach(recipe ->
                 recipeListFlowPane.getChildren().add(new RecipeListItem(recipe, this)));
+
     }
 
     private void initializeIngredientComboBox(){
@@ -97,16 +98,17 @@ public class RecipeSearchController implements Initializable {
         });
     }
 
-    /**
-     * Behöver fixa så man kan lägga in egna värden via att trycka i spinnern, bör vara focusedProperty, men halvsketchy
-     */
+
     private void initializeSpinner(){
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,500,50,10);
         priceSpinner.setValueFactory(valueFactory);
+        priceSpinner.setEditable(true);
+
         priceSpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
             backendCC.setMaxPrice(newValue);
             updateRecipeList();
         });
+
 
         priceSpinner.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if(!newValue){
@@ -115,16 +117,16 @@ public class RecipeSearchController implements Initializable {
                 updateRecipeList();
             }
         });
-
     }
 
     private void initializeSlider(){
         timeSlider.setMin(10);
         timeSlider.setMax(150);
-        timeSlider.setBlockIncrement(timeSlider.getWidth()/14);
-        timeSlider.setShowTickMarks(true);
         timeSlider.setValue(10);
-        timeSlider.setSnapToTicks(true);
+        timeSlider.setBlockIncrement(timeSlider.getWidth() / (timeSlider.getMax() - timeSlider.getMin()) );
+        timeSlider.setShowTickMarks(true);
+
+
         timeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue!=null && !newValue.equals(oldValue) && timeSlider.isValueChanging()){
                 backendCC.setMaxTime(newValue.intValue());
@@ -145,15 +147,18 @@ public class RecipeSearchController implements Initializable {
         aImageView.setImage(recipe.getFXImage());
     }
 
+    /**
+     * Var tvungen att kalla splitPanens .toBack() funktion, kunde ej calla, anchorpanens.toFront().
+     * @param recipe
+     */
     public void openRecipeView(Recipe recipe){
         populateRecipeDetailView(recipe);
-        recipeDetailPane.toFront();
+        splitSearchPane.toBack();
     }
 
     @FXML
     public void closeRecipeView(){
         splitSearchPane.toFront();
     }
-
 
 }

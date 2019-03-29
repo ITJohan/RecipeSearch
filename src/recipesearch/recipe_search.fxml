@@ -21,7 +21,7 @@
                <children>
                   <Label fx:id="aRecipeLabel" layoutX="264.0" layoutY="58.0" text="Recipe" />
                   <ImageView fx:id="aImageView" fitHeight="150.0" fitWidth="200.0" layoutX="41.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="aCloseButton" layoutX="96.0" layoutY="346.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Close" />
+                  <Button fx:id="aCloseButton" layoutX="96.0" layoutY="346.0" mnemonicParsing="false" onAction="#closeRecipeView" onMousePressed="#closeRecipeView" text="Close" />
                </children></AnchorPane>
             <SplitPane fx:id="splitSearchPane" dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0">
               <items>
@@ -29,18 +29,18 @@
                      <children>
                         <ComboBox fx:id="ingredientComboBox" layoutX="111.0" layoutY="159.0" prefWidth="150.0" />
                         <ComboBox fx:id="cuisineComboBox" layoutX="111.0" layoutY="208.0" prefWidth="150.0" />
-                        <Spinner fx:id="priceSpinner" layoutX="102.0" layoutY="356.0" prefHeight="25.0" prefWidth="68.0" />
-                        <Slider fx:id="timeSlider" layoutX="102.0" layoutY="396.0" />
                         <RadioButton fx:id="allButton" layoutX="113.0" layoutY="249.0" mnemonicParsing="false" text="Alla" />
                         <RadioButton fx:id="easyButton" layoutX="113.0" layoutY="271.0" mnemonicParsing="false" text="Lätt" />
                         <RadioButton fx:id="averageButton" layoutX="114.0" layoutY="297.0" mnemonicParsing="false" text="Mellan" />
                         <RadioButton fx:id="hardButton" layoutX="114.0" layoutY="324.0" mnemonicParsing="false" text="Svår" />
+                        <Spinner fx:id="priceSpinner" editable="true" layoutX="102.0" layoutY="356.0" prefHeight="25.0" prefWidth="68.0" />
+                        <Slider fx:id="timeSlider" layoutX="102.0" layoutY="396.0" max="150.0" min="10.0" showTickMarks="true" value="10.0" />
                         <Label fx:id="ingredientLabel" layoutX="7.0" layoutY="163.0" prefHeight="17.0" prefWidth="104.0" text="HuvudIngrediens:" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="165.0" />
                         <Label fx:id="cuisineLabel" layoutX="75.0" layoutY="212.0" text="Kök:" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="165.0" />
                         <Label fx:id="difficultyLabel" layoutX="20.0" layoutY="249.0" text="SvårighetsGrad:" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="165.0" />
                         <Label fx:id="priceLabel" layoutX="51.0" layoutY="360.0" text="Maxpris:" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="165.0" />
                         <Label fx:id="maxTimeLabel" layoutX="53.0" layoutY="395.0" text="Maxtid:" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="165.0" />
-                        <Label fx:id="timeLabel" layoutX="172.0" layoutY="412.0" text="10" />
+                        <Label fx:id="timeLabel" layoutX="172.0" layoutY="412.0" />
                      </children>
                   </AnchorPane>
                 <AnchorPane fx:id="recipeDetailPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
