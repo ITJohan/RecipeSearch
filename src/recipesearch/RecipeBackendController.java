@@ -45,7 +45,8 @@ public class RecipeBackendController {
             this.maxTime = maxTime;
         }
     }
-    public void updateStringValueIfAllowed(List<String> values, String valueToUpdate, String searchValue){
+
+    private void updateStringValueIfAllowed(List<String> values, String valueToUpdate, String searchValue){
         if(values.contains(searchValue)){
             valueToUpdate = searchValue;
         }
