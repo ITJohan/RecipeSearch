@@ -1,0 +1,8 @@
+Eventuell förbättring gällande koden mer än utseendet vore att kunna generallisera initializseringen utav ComboBoxes,
+så att koden inte behöver vara snarlik identik utan istället passeras relevanta parametrar in som argument.
+
+En förbättring vore att faktiskt sätta Toogle gruppen för vilka radioknapparna tillhör i SceneBuilder
+under Properties -> Toogle Group, så att detta blir en del av .fxml filen. Motiveringen till detta är att
+för alla andra delar av projektet så har attribut kopplade till GUI't placerats in i .fxml filen, och enbart beteendet
+för interaktionen mellan backend och frontend kodats.
+Att knapparna tillhör samma grupp anses vara mer anknutet till ett attribut för komponenterna än som en interaktionsdel.

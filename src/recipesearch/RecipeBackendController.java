@@ -14,9 +14,9 @@ public class RecipeBackendController {
     private String difficulty = null;
     private int maxPrice = 0;
     private int maxTime = 0;
-    private final List<String> ACCEPTED_CUISINES = Arrays.asList("Sverige", "Grekland", "Indien", "Asien", "Afrika", "Frankrike");
-    private final List<String> ACCEPTED_MAIN_INGREDIENT = Arrays.asList("Kött", "Fisk", "Kyckling", "Vegetarisk");
-    private final List<String> ACCEPTED_DIFFICULTIES = Arrays.asList("Lätt", "Mellan", "Svår");
+    public final List<String> ACCEPTED_CUISINES = Arrays.asList("Sverige", "Grekland", "Indien", "Asien", "Afrika", "Frankrike");
+    public final List<String> ACCEPTED_MAIN_INGREDIENT = Arrays.asList("Kött", "Fisk", "Kyckling", "Vegetarisk");
+    public final List<String> ACCEPTED_DIFFICULTIES = Arrays.asList("Lätt", "Mellan", "Svår");
 
     public List<Recipe> getRecipes(){
         return RecipeDatabase.getSharedInstance().search(new SearchFilter(difficulty, maxTime, cuisine, maxPrice, mainIngredient));
@@ -54,5 +54,9 @@ public class RecipeBackendController {
             System.out.println("Not a valid option, the valid options are: ");
             values.forEach(System.out::println);
         }
+    }
+
+    public int getMaxTime() {
+        return maxTime;
     }
 }
