@@ -23,15 +23,21 @@ public class RecipeBackendController {
     }
 
     public void setCuisine(String cuisine) {
-        updateStringValueIfAllowed(ACCEPTED_CUISINES, this.cuisine, cuisine);
+        if(ACCEPTED_CUISINES.contains(cuisine)){
+            this.cuisine = cuisine;
+        }
     }
 
     public void setMainIngredient(String mainIngredient) {
-      updateStringValueIfAllowed(ACCEPTED_MAIN_INGREDIENT, this.mainIngredient, mainIngredient);
+        if(ACCEPTED_MAIN_INGREDIENT.contains(mainIngredient)){
+            this.mainIngredient = mainIngredient;
+        }
     }
 
     public void setDifficulty(String difficulty) {
-        updateStringValueIfAllowed(ACCEPTED_DIFFICULTIES, this.difficulty, difficulty);
+        if(ACCEPTED_DIFFICULTIES.contains(difficulty)){
+            this.difficulty = difficulty;
+        }
     }
 
     public void setMaxPrice(int maxPrice) {
@@ -43,16 +49,6 @@ public class RecipeBackendController {
     public void setMaxTime(int maxTime) {
         if((maxTime>=10 && maxTime<=150) && maxTime % 10 == 0){
             this.maxTime = maxTime;
-        }
-    }
-
-    private void updateStringValueIfAllowed(List<String> values, String valueToUpdate, String searchValue){
-        if(values.contains(searchValue)){
-            valueToUpdate = searchValue;
-        }
-        else{
-            System.out.println("Not a valid option, the valid options are: ");
-            values.forEach(System.out::println);
         }
     }
 

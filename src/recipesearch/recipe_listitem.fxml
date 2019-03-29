@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<fx:root prefHeight="100.0" prefWidth="495.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="recipeImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../recipes/recipe1.jpg" />
-         </image>
-      </ImageView>
-      <Label fx:id="recipeNameLabel" layoutX="160.0" layoutY="15.0" text="Stekt Ägg" />
+      <ImageView fx:id="recipeListImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="recipeNameLabel" layoutX="200.0" layoutY="15.0" prefHeight="20.0" prefWidth="200.0" />
    </children>
 </fx:root>
