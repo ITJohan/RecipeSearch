@@ -44,22 +44,19 @@ public class RecipeSearchController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        populateMap();
         updateRecipeList();
         initializeIngredientComboBox();
         initializeCuisineComboBox();
         initializeRadioButtons();
         initializeSpinner();
         initializeSlider();
-        populateMap();
     }
 
-    /**
-     * Behöver fixa 11.3
-     */
     private void updateRecipeList(){
         recipeListFlowPane.getChildren().clear();
         backendCC.getRecipes().forEach(recipe ->
-                recipeListFlowPane.getChildren().add(new RecipeListItem(recipe, this)));
+                recipeListFlowPane.getChildren().add(recipeListItemMap.get(recipe.getName())));
 
     }
 
