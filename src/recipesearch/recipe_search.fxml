@@ -8,12 +8,13 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
+<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" stylesheets="@recipe_search.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
    <children>
       <StackPane prefHeight="500.0" prefWidth="800.0">
          <children>
@@ -27,20 +28,55 @@
               <items>
                 <AnchorPane fx:id="searchPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="308.0">
                      <children>
-                        <ComboBox fx:id="ingredientComboBox" layoutX="130.0" layoutY="160.0" prefWidth="150.0" />
-                        <ComboBox fx:id="cuisineComboBox" layoutX="130.0" layoutY="208.0" prefWidth="150.0" />
-                        <RadioButton fx:id="allButton" layoutX="130.0" layoutY="250.0" mnemonicParsing="false" text="Alla" />
-                        <RadioButton fx:id="easyButton" layoutX="130.0" layoutY="275.0" mnemonicParsing="false" text="Lätt" />
-                        <RadioButton fx:id="averageButton" layoutX="130.0" layoutY="300.0" mnemonicParsing="false" text="Mellan" />
-                        <RadioButton fx:id="hardButton" layoutX="130.0" layoutY="325.0" mnemonicParsing="false" text="Svår" />
-                        <Spinner fx:id="priceSpinner" editable="true" layoutX="130.0" layoutY="356.0" prefHeight="25.0" prefWidth="68.0" />
-                        <Slider fx:id="timeSlider" layoutX="130.0" layoutY="396.0" max="150.0" min="10.0" showTickMarks="true" snapToTicks="true" value="10.0" />
-                        <Label fx:id="ingredientLabel" alignment="BOTTOM_RIGHT" layoutX="5.0" layoutY="163.0" prefHeight="20.0" prefWidth="120.0" text="HuvudIngrediens:" wrapText="true" />
-                        <Label fx:id="cuisineLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="212.0" prefHeight="20.0" prefWidth="120.0" text="Kök:" textAlignment="RIGHT" />
-                        <Label fx:id="difficultyLabel" alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="250.0" prefHeight="20.0" prefWidth="120.0" text="SvårighetsGrad:" />
-                        <Label fx:id="priceLabel" alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="360.0" prefHeight="20.0" prefWidth="120.0" text="Maxpris:" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="165.0" />
-                        <Label fx:id="maxTimeLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="395.0" prefHeight="20.0" prefWidth="120.0" text="Maxtid:" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="165.0" />
-                        <Label fx:id="timeLabel" layoutX="160.0" layoutY="414.0" prefHeight="21.0" prefWidth="32.0" />
+                        <ComboBox fx:id="ingredientComboBox" layoutX="138.0" layoutY="191.0" prefWidth="150.0" styleClass="text-smaller" />
+                        <ComboBox fx:id="cuisineComboBox" layoutX="138.0" layoutY="239.0" prefWidth="150.0" styleClass="text-smaller" />
+                        <RadioButton fx:id="allButton" layoutX="138.0" layoutY="281.0" mnemonicParsing="false" styleClass="text-smaller" text="Alla" />
+                        <RadioButton fx:id="easyButton" layoutX="138.0" layoutY="306.0" mnemonicParsing="false" styleClass="text-smaller" text="Lätt">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_easy.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <RadioButton fx:id="averageButton" layoutX="138.0" layoutY="331.0" mnemonicParsing="false" styleClass="text-smaller" text="Mellan">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_medium.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <RadioButton fx:id="hardButton" layoutX="138.0" layoutY="356.0" mnemonicParsing="false" styleClass="text-smaller" text="Svår">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_hard.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <Spinner fx:id="priceSpinner" editable="true" layoutX="138.0" layoutY="387.0" prefHeight="25.0" prefWidth="68.0" styleClass="text-smaller" />
+                        <Slider fx:id="timeSlider" layoutX="138.0" layoutY="427.0" max="150.0" min="10.0" showTickMarks="true" snapToTicks="true" value="10.0" />
+                        <Label fx:id="ingredientLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="194.0" prefHeight="20.0" prefWidth="120.0" styleClass="text-normal" text="HuvudIngrediens:" wrapText="true" />
+                        <Label fx:id="cuisineLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="243.0" prefHeight="20.0" prefWidth="120.0" styleClass="text-normal" text="Kök:" textAlignment="RIGHT" />
+                        <Label fx:id="difficultyLabel" alignment="BOTTOM_RIGHT" layoutX="13.0" layoutY="281.0" prefHeight="20.0" prefWidth="120.0" styleClass="text-normal" text="SvårighetsGrad:" />
+                        <Label fx:id="priceLabel" alignment="BOTTOM_RIGHT" layoutX="13.0" layoutY="391.0" prefHeight="20.0" prefWidth="120.0" styleClass="text-normal" text="Maxpris:" />
+                        <Label fx:id="maxTimeLabel" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="426.0" prefHeight="20.0" prefWidth="120.0" styleClass="text-normal" text="Maxtid:" />
+                        <Label fx:id="timeLabel" layoutX="163.0" layoutY="445.0" prefHeight="21.0" prefWidth="91.0">
+                           <graphic>
+                              <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_time.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Label>
+                        <Label id="logo-twirl" layoutX="179.0" layoutY="51.0" text="Sök" />
+                        <Label id="logo" layoutX="140.0" layoutY="15.0" text="Recept" />
+                        <ImageView fitHeight="123.0" fitWidth="109.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/logo.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                 <AnchorPane fx:id="recipeDetailPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">

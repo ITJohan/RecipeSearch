@@ -19,8 +19,8 @@ import java.io.IOException;
 public class RecipeListItem extends AnchorPane {
     private RecipeSearchController parentController;
     private Recipe recipe;
-    @FXML ImageView recipeListImage;
-    @FXML Label recipeNameLabel;
+    @FXML private ImageView recipeListImage;
+    @FXML private Label recipeNameLabel;
 
     public RecipeListItem(Recipe recipe, RecipeSearchController recipeSearchController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("recipe_listitem.fxml"));
