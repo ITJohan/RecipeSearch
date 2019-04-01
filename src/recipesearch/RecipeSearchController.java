@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -128,8 +130,11 @@ public class RecipeSearchController implements Initializable {
             if(newValue!=null && !newValue.equals(oldValue) && timeSlider.isValueChanging()){
                 backendCC.setMaxTime(newValue.intValue());
                 timeLabel.setText(String.valueOf(backendCC.getMaxTime()));
+                updateRecipeList();
             }
         });
+
+
     }
 
     private void populateMap(){

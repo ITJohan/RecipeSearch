@@ -37,7 +37,6 @@ public class RecipeListItem extends AnchorPane {
         this.parentController = recipeSearchController;
         recipeListImage.setImage(recipe.getFXImage());
         recipeNameLabel.setText(recipe.getName());
-
     }
 
     public void onClick(MouseEvent mouseEvent) {
