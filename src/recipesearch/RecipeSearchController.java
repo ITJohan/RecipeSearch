@@ -51,6 +51,7 @@ public class RecipeSearchController implements Initializable {
     @FXML TextArea ingredientArea;
     @FXML TextArea preparationArea;
     @FXML Label portionSize;
+    @FXML ImageView detailFlag;
 
     private Map<String, RecipeListItem> recipeListItemMap = new HashMap<>();
 
@@ -164,6 +165,7 @@ public class RecipeSearchController implements Initializable {
         preparationArea.setText(recipe.getInstruction());
         portionSize.setText(recipe.getServings() + " portioner");
         ingredientArea.setText(getIngredients(recipe.getIngredients()));
+        detailFlag.setImage(getImage(recipe.getCuisine()));
     }
 
     private String getIngredients(List<Ingredient> ingredients){

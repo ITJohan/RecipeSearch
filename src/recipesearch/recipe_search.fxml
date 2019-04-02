@@ -19,63 +19,6 @@
    <children>
       <StackPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="detailView" onMouseClicked="#closeRecipeView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-               <children>
-                  <AnchorPane id="lightBox" layoutX="35.0" layoutY="30.0" onMouseClicked="#mouseTrap" prefHeight="515.0" prefWidth="807.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="32.0">
-                     <children>
-                        <Label id="detail-header" fx:id="aRecipeLabel" layoutX="270.0" prefHeight="70.0" prefWidth="495.0" text="Laxpaket med fänkål och spenat" />
-                        <ImageView fx:id="aImageView" fitHeight="242.0" fitWidth="242.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../recipes/laxpaket-med-fankal-och-spenat.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="91.0" layoutX="302.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/icon_difficulty_medium.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="273.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/icon_main_fish.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="392.0" layoutY="55.0" text="20 minuter">
-                           <graphic>
-                              <ImageView fitHeight="24.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/icon_time.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Label>
-                        <Label layoutX="499.0" layoutY="55.0" text="40kr" />
-                        <ImageView fitHeight="40.0" fitWidth="45.0" layoutX="200.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/icon_flag_france.png" />
-                           </image>
-                        </ImageView>
-                        <TextArea fx:id="descriptionArea" editable="false" layoutX="270.0" layoutY="95.0" prefHeight="70.0" prefWidth="430.0" styleClass="text-normal" text="Goda foliepaket fyllda med lax, spenar och brynt smör med fänkål. Serveras med potatis och avrunnen gräddfil.&#10;" wrapText="true" />
-                        <TextArea fx:id="ingredientArea" editable="false" layoutX="15.0" layoutY="245.0" prefHeight="200.0" prefWidth="242.0" text="Spätta&#10;" />
-                        <TextArea fx:id="preparationArea" editable="false" layoutX="270.0" layoutY="205.0" prefHeight="308.0" prefWidth="457.0" styleClass="text-normal" text="Eventuell förbättring gällande koden mer än utseendet vore att kunna generallisera initializseringen utav ComboBoxes,&#10;så att koden inte behöver vara snarlik identik utan istället passeras relevanta parametrar in som argument.&#10;&#10;En förbättring vore att faktiskt sätta Toogle gruppen för vilka radioknapparna tillhör i SceneBuilder&#10;under Properties -&gt; Toogle Group, så att detta blir en del av .fxml filen. Motiveringen till detta är att&#10;för alla andra delar av projektet så har attribut kopplade till GUI't placerats in i .fxml filen, och enbart beteendet&#10;för interaktionen mellan backend och frontend kodats.&#10;Att knapparna tillhör samma grupp anses vara mer anknutet till ett attribut för komponenterna än som en interaktionsdel." wrapText="true" />
-                        <ImageView fx:id="detailCloseImage" fitHeight="15.0" fitWidth="15.0" layoutX="786.0" layoutY="7.0" onMouseClicked="#closeRecipeView" onMouseEntered="#closeButtonMouseEntered" onMouseExited="#closeButtonMouseExited" onMousePressed="#closeButtonMousePressed" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/icon_close.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="15.0" layoutY="205.0" text="Ingredienser:">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="portionSize" layoutX="15.0" layoutY="222.0" text="4 Portioner" />
-                        <Label layoutX="270.0" layoutY="182.0" prefHeight="17.0" prefWidth="109.0" text="Tillagning:">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children></AnchorPane>
             <SplitPane fx:id="splitSearchPane" dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0">
               <items>
                 <AnchorPane fx:id="searchPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="308.0">
@@ -143,6 +86,63 @@
                   </AnchorPane>
               </items>
             </SplitPane>
+            <AnchorPane fx:id="detailView" onMouseClicked="#closeRecipeView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <AnchorPane id="lightBox" layoutX="35.0" layoutY="30.0" onMouseClicked="#mouseTrap" prefHeight="515.0" prefWidth="807.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="32.0">
+                     <children>
+                        <Label id="detail-header" fx:id="aRecipeLabel" layoutX="270.0" prefHeight="70.0" prefWidth="495.0" text="Laxpaket med fänkål och spenat" />
+                        <ImageView fx:id="aImageView" fitHeight="242.0" fitWidth="242.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../recipes/laxpaket-med-fankal-och-spenat.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="91.0" layoutX="302.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon_difficulty_medium.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="273.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon_main_fish.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="392.0" layoutY="55.0" text="20 minuter">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_time.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label layoutX="499.0" layoutY="55.0" text="40kr" />
+                        <ImageView fx:id="detailFlag" fitHeight="40.0" fitWidth="45.0" layoutX="200.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon_flag_france.png" />
+                           </image>
+                        </ImageView>
+                        <TextArea fx:id="descriptionArea" editable="false" layoutX="270.0" layoutY="95.0" prefHeight="84.0" prefWidth="450.0" text="Goda foliepaket fyllda med lax, spenar och brynt smör med fänkål. Serveras med potatis och avrunnen gräddfil.&#10;" wrapText="true" />
+                        <TextArea fx:id="ingredientArea" editable="false" layoutX="15.0" layoutY="245.0" prefHeight="200.0" prefWidth="242.0" text="Spätta&#10;" />
+                        <TextArea fx:id="preparationArea" editable="false" layoutX="270.0" layoutY="205.0" prefHeight="302.0" prefWidth="457.0" text="Eventuell förbättring gällande koden mer än utseendet vore att kunna generallisera initializseringen utav ComboBoxes,&#10;så att koden inte behöver vara snarlik identik utan istället passeras relevanta parametrar in som argument.&#10;&#10;En förbättring vore att faktiskt sätta Toogle gruppen för vilka radioknapparna tillhör i SceneBuilder&#10;under Properties -&gt; Toogle Group, så att detta blir en del av .fxml filen. Motiveringen till detta är att&#10;för alla andra delar av projektet så har attribut kopplade till GUI't placerats in i .fxml filen, och enbart beteendet&#10;för interaktionen mellan backend och frontend kodats.&#10;Att knapparna tillhör samma grupp anses vara mer anknutet till ett attribut för komponenterna än som en interaktionsdel." wrapText="true" />
+                        <ImageView fx:id="detailCloseImage" fitHeight="15.0" fitWidth="15.0" layoutX="786.0" layoutY="7.0" onMouseClicked="#closeRecipeView" onMouseEntered="#closeButtonMouseEntered" onMouseExited="#closeButtonMouseExited" onMousePressed="#closeButtonMousePressed" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon_close.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="15.0" layoutY="205.0" text="Ingredienser:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="portionSize" layoutX="15.0" layoutY="222.0" text="4 Portioner" />
+                        <Label layoutX="270.0" layoutY="182.0" prefHeight="17.0" prefWidth="109.0" text="Tillagning:">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
          </children>
       </StackPane>
    </children>
