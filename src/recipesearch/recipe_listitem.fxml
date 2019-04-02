@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseClicked="#onClick" prefHeight="120.0" prefWidth="550.0" styleClass="recipe-list-item" stylesheets="@recipe_search.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="recipeListImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="recipeNameLabel" layoutX="200.0" layoutY="15.0" prefHeight="20.0" prefWidth="200.0" />
+      <ImageView id="picture" fx:id="itemImage" fitHeight="107.0" fitWidth="139.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="recipe-list-picture">
+         <image>
+            <Image url="@../../recipes/chicken-tikka-masala.jpg" />
+         </image></ImageView>
+      <Label id="header" fx:id="itemHeader" layoutX="151.0" prefHeight="45.0" prefWidth="282.0" text="Coq au vin" />
+      <ImageView fx:id="itemFlag" fitHeight="25.0" fitWidth="25.0" layoutX="115.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_flag_india.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="itemIngredient" fitHeight="20.0" fitWidth="20.0" layoutX="164.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_main_beef.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="itemDifficulty" fitHeight="50.0" fitWidth="65.0" layoutX="198.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_difficulty_medium.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="itemTimeLabel" layoutX="289.0" layoutY="37.0" styleClass="text-normal" text="Tid" />
+      <Label fx:id="itemCostLabel" layoutX="373.0" layoutY="37.0" styleClass="text-normal" text="Kostnad" />
+      <Label fx:id="itemDescLabel" layoutX="161.0" layoutY="70.0" prefHeight="37.0" prefWidth="375.0" text="Använd med fördel lite äldre frigående fågel, smakar bättre och ger ifrån sig mer tuggmotstånd och grövre fibrer. Serveras med" wrapText="true" />
    </children>
 </fx:root>

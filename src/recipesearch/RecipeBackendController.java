@@ -16,7 +16,7 @@ public class RecipeBackendController {
     private int maxTime = 0;
     public final List<String> ACCEPTED_CUISINES = Arrays.asList("Sverige", "Grekland", "Indien", "Asien", "Afrika", "Frankrike");
     public final List<String> ACCEPTED_MAIN_INGREDIENT = Arrays.asList("Kött", "Fisk", "Kyckling", "Vegetarisk");
-    public final List<String> ACCEPTED_DIFFICULTIES = Arrays.asList("Lätt", "Mellan", "Svår");
+    public final List<String> ACCEPTED_DIFFICULTIES = Arrays.asList("Lätt", "Mellan", "Svår", "Alla");
 
     public List<Recipe> getRecipes(){
         return RecipeDatabase.getSharedInstance().search(new SearchFilter(difficulty, maxTime, cuisine, maxPrice, mainIngredient));

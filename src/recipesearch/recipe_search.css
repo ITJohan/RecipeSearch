@@ -13,6 +13,11 @@
     -fx-font-family: "Avenir Book";
 }
 
+#desc{
+    -fx-font-size: 14px;
+    -fx-text-fill: #76797f;
+    -fx-font-family: "Avenir Book";
+}
 
 #logo{
     -fx-font-family: "Phosphate";
@@ -25,4 +30,46 @@
     -fx-rotate: -20;
     -fx-text-fill: #FFAC33;
 
+}
+
+.recipe-list-item{
+    -fx-border-width: 1px;
+    -fx-border-color: #999999;
+    -fx-border-radius: 1px;
+    -fx-background-radius: 1px;
+}
+
+#picture{
+    -fx-border-width: 10px;
+    -fx-border-color: #76797f;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 1px;
+}
+
+#header{
+    -fx-font-size: 24px;
+}
+
+#detail-header{
+    -fx-font-size: 30px;
+}
+
+.recipe-list-item:hover{
+    -fx-background-color: #FCFCFC;
+}
+
+.reciple-list-item::pressed{
+ -fx-background-color: #D0D0D0;
+}
+
+.text-area .content {
+   -fx-background-color: -fx-background;
+}
+
+.text-area  {
+    -fx-background-color: -fx-background;
+}
+
+#lightBox{
+    -fx-background-color: -fx-background;
 }
