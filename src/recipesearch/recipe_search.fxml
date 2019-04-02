@@ -24,7 +24,7 @@
                   <AnchorPane id="lightBox" layoutX="35.0" layoutY="30.0" onMouseClicked="#mouseTrap" prefHeight="515.0" prefWidth="807.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="32.0">
                      <children>
                         <Label id="detail-header" fx:id="aRecipeLabel" layoutX="270.0" prefHeight="70.0" prefWidth="495.0" text="Laxpaket med fänkål och spenat" />
-                        <ImageView fx:id="aImageView" fitHeight="242.0" fitWidth="242.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="aImageView" fitHeight="190.0" fitWidth="242.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../recipes/laxpaket-med-fankal-och-spenat.jpg" />
                            </image>
